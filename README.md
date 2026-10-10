@@ -1,37 +1,22 @@
 # GLM Basketball Shots
 
-**Generalized Linear Models on Basketball Shot Data**  
-Implements Multinomial & Ordinal Logistic Regression, plus bootstrapping for uncertainty, demonstrated on a real basketball‐shot dataset and a synthetic DGP.
+Multinomial and ordinal logistic regression, implemented with NumPy and SciPy, and applied to a dataset of basketball shots. Coefficient uncertainty is estimated with bootstrapping, and both models are also checked on synthetic data from a known data-generating process.
 
-## Repository
-`https://github.com/your‑username/GLM‑BasketballShots.git`
+![Multinomial regression coefficients on the shot data](multinomial_coefficients.svg)
 
-## Requirements
-- Python 3.8+
-- `numpy`, `pandas`, `scipy`, `matplotlib`, `scikit‑learn`
+## Files
 
-Install with:
+- `solution.py`: the multinomial and ordinal logistic regression models
+- `test_lr.py`: unit tests for both models
+- `analysis.py`: fits the models to the real and synthetic data, with bootstrapped confidence intervals
+- `dataset.csv`: basketball shot data
+
+## Running it
+
 ```bash
+git clone https://github.com/alihawk/glm-basketball-shots.git
+cd glm-basketball-shots
 pip install -r requirements.txt
-
-
-Project Structure
-
-.
-├── solution.py         # Part 1 implementations & tests
-├── part2.py            # Part 2 application & bootstrapping
-├── test_lr.py          # Unit tests for Part 1
-├── dataset.csv         # Basketball shots data
-├── multinominal_coefficients.svg
-├── README.md
-└── .gitignore
-Usage
-Run the unit‑tests (Part 1):
-
-
 python test_lr.py
-Apply to real & synthetic data (Part 2):
-
-
-python part2.py
-Open multinomial_coefficients.svg to see coefficient plots.
+python analysis.py
+```
